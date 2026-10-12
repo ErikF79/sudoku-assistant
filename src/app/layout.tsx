@@ -3,12 +3,15 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { PwaRegister } from '@/components/pwa-register';
 
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 export const metadata: Metadata = {
+  metadataBase: new URL('https://erikf79.github.io/sudoku-assistant/'),
   title: 'Aiuto Sudoku — Assistente passo-passo',
   description:
     'Assistente Sudoku 9x9 offline e installabile: inserisci il puzzle e ricevi suggerimenti spiegati un passo alla volta.',
   applicationName: 'Aiuto Sudoku',
-  manifest: '/manifest.webmanifest',
+  manifest: `${BASE_PATH}/manifest.webmanifest`,
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
@@ -16,11 +19,11 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/icons/icon.svg', type: 'image/svg+xml' },
-      { url: '/icons/icon-192.png', sizes: '192x192', type: 'image/png' },
-      { url: '/icons/icon-512.png', sizes: '512x512', type: 'image/png' },
+      { url: `${BASE_PATH}/icons/icon.svg`, type: 'image/svg+xml' },
+      { url: `${BASE_PATH}/icons/icon-192.png`, sizes: '192x192', type: 'image/png' },
+      { url: `${BASE_PATH}/icons/icon-512.png`, sizes: '512x512', type: 'image/png' },
     ],
-    apple: [{ url: '/icons/apple-touch-icon.png', sizes: '180x180' }],
+    apple: [{ url: `${BASE_PATH}/icons/apple-touch-icon.png`, sizes: '180x180' }],
   },
 };
 

@@ -2,6 +2,8 @@
 
 Assistente per risolvere puzzle **Sudoku 9x9** un passo alla volta, con la **spiegazione della strategia** usata a ogni mossa. Funziona **completamente offline**, è **installabile** come app (PWA) e si adatta a PC, tablet e smartphone.
 
+**Demo online:** https://erikf79.github.io/sudoku-assistant/
+
 ## Funzionalità
 
 - **Griglia interattiva** touch-friendly con selezione, evidenziazione di riga/colonna/blocco e conflitti in rosso.
@@ -40,6 +42,10 @@ node serve-preview.mjs   # anteprima su http://localhost:4173
 ```
 
 Il service worker si attiva solo nella build di produzione. Per installare la PWA: apri l'anteprima e usa *Installa app* dal menu del browser.
+
+## Deploy
+
+Il deploy su **GitHub Pages** è automatico: a ogni push su `main` il workflow `.github/workflows/deploy.yml` compila l'export statico (con `basePath=/sudoku-assistant`) e pubblica la cartella `out/`.
 
 ## Struttura
 

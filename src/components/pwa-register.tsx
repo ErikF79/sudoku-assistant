@@ -2,6 +2,8 @@
 
 import { useEffect } from 'react';
 
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 export function PwaRegister() {
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -9,7 +11,7 @@ export function PwaRegister() {
     if (process.env.NODE_ENV !== 'production') return;
 
     const register = () => {
-      navigator.serviceWorker.register('/sw.js').catch(() => {
+      navigator.serviceWorker.register(`${BASE_PATH}/sw.js`).catch(() => {
         /* offline non disponibile */
       });
     };
